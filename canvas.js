@@ -18,32 +18,37 @@ var demo = new Vue({
 	},	
 	methods:{
 		Add:function(){
-			if(this.add.percent > this.add.placeholder){
+			if(parseInt(this.add.percent) > parseInt(this.add.placeholder)){
 				this.inputpercent.focus();
 				this.inputpercent.value = '';
 			}else{
+				console.log(deg)
 				var color = 'rgb('+Math.floor(Math.random()*256)+','+Math.floor(Math.random()*256)+','+Math.floor(Math.random()*256)+')';
+				var deg = 0;
 				this.input.push({
 					name:this.add.name,
 					percent:this.add.percent,
 					color:color
 				})
+				this.input.forEach(function(ele,index){
+					deg += parseInt(ele.percent);
+				});
 				this.add.placeholder = this.add.placeholder - this.add.percent;
 				this.inputpercent.value = '';
-				this.draw(color,this.add.percent/100);
+				this.draw(color,deg/100);
 			}
 			
 		},
 		draw:function(color,deg){
 			var canvas = document.querySelector('canvas');
             var context = canvas.getContext("2d");
-            context.clearRect(0, 0, 400, 400);
             context.beginPath();  
             context.moveTo(200, 200);  
             context.arc(200, 200, 200, 0, Math.PI * 2*deg, false);  
             context.closePath();  
             context.fillStyle = color;
             context.fill();
+            context.globalCompositeOperation = "destination-over";
 		},
 		getinput:function(){
 			var This = this;
