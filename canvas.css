@@ -21,6 +21,23 @@ li{list-style: none;}
 	height: 30px;line-height: 30px;
 	font-size: 16px;
 }
+#demo > div:nth-of-type(1) input[type="text"]{
+	height: 30px;outline: none;
+	width: 200px;line-height: 30px;
+	border-radius: 4px;border: none;
+	color: white;padding-left:10px; 
+	background-color: rgba(0,0,0,.3);margin-top: 20px;
+}
+#demo > div:nth-of-type(1) > label{
+	display: inline-block;
+	width: 100px;
+}
+#demo > div:nth-of-type(1) input[type="button"]{
+	width: 200px;height: 30px;outline: none;border:none;
+	background-color: rgba(255,102,0,.56);font-family: "Microsoft Yahei";
+	line-height: 30px;text-align: center;color: white;
+	margin: 20px 100px;border-radius: 4px;
+}
 #demo > div:nth-of-type(1) ul li> span{
 	display: inline-block;
 	vertical-align: middle;

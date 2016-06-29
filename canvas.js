@@ -11,6 +11,7 @@ var demo = new Vue({
 			//{name:'',percent:''},
 		],
 		inputpercent:'',
+		inputname:'',
 
 	},
 	created:function(){
@@ -21,7 +22,12 @@ var demo = new Vue({
 			if(parseInt(this.add.percent) > parseInt(this.add.placeholder)){
 				this.inputpercent.focus();
 				this.inputpercent.value = '';
-			}else{
+			}else if(this.add.percent == ''){
+				this.inputpercent.focus();
+			}else if(this.add.name == ''){
+				this.inputname.focus();
+			}
+			else{
 				console.log(deg)
 				var color = 'rgb('+Math.floor(Math.random()*256)+','+Math.floor(Math.random()*256)+','+Math.floor(Math.random()*256)+')';
 				var deg = 0;
@@ -54,6 +60,7 @@ var demo = new Vue({
 			var This = this;
 			Vue.nextTick(function () {
 			  This.inputpercent = This.$els.percent;
+			  This.inputname = This.$els.name;
 			})
 		}
 	}

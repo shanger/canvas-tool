@@ -9,7 +9,7 @@
 	<body
     <div id="demo">
     	<div class="left">
-    		<label for='partName'>name:</label><input type='text' id='partName' v-model='add.name'><br/>
+    		<label for='partName'>name:</label><input type='text' id='partName' v-model='add.name' v-el:name><br/>
     		<label for='percent'>百分比：</label><input type='text' id='percent' v-model="add.percent" v-bind:placeholder='add.placeholder' v-el:percent/><br/>
     		<input type='button' value='添加' v-on:click.stop="Add()"/>
     		<ul>
