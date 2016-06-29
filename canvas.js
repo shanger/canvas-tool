@@ -12,6 +12,10 @@ var demo = new Vue({
 		],
 		inputpercent:'',
 		inputname:'',
+		tips:{
+			show:false,
+			text:''
+		}
 
 	},
 	created:function(){
@@ -22,10 +26,13 @@ var demo = new Vue({
 			if(parseInt(this.add.percent) > parseInt(this.add.placeholder)){
 				this.inputpercent.focus();
 				this.inputpercent.value = '';
-			}else if(this.add.percent == ''){
-				this.inputpercent.focus();
+				this.tipsShow('数值不能大于<label>'+this.add.placeholder+'</label>');
 			}else if(this.add.name == ''){
 				this.inputname.focus();
+				this.tipsShow('请完善信息！');
+			}else if(this.add.percent == ''){
+				this.inputpercent.focus();
+				this.tipsShow('请完善信息！');
 			}
 			else{
 				console.log(deg)
@@ -62,6 +69,14 @@ var demo = new Vue({
 			  This.inputpercent = This.$els.percent;
 			  This.inputname = This.$els.name;
 			})
+		},
+		tipsShow:function(text){
+			var This = this;
+			this.tips.show = true;
+			this.tips.text = text;
+			setTimeout(function(){
+				This.tips.show = false;
+			},3000);
 		}
 	}
 });

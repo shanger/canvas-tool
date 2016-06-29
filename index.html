@@ -6,7 +6,7 @@
 	</head>
   <link rel="stylesheet" type="text/css" href="canvas.css">
   <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.17/vue.min.js"></script>
-	<body
+	<body>
     <div id="demo">
     	<div class="left">
     		<label for='partName'>name:</label><input type='text' id='partName' v-model='add.name' v-el:name><br/>
@@ -18,8 +18,12 @@
 	    </div><div class="right">
 	    	<canvas  width="400px" height='400px'></canvas>
 	    </div>
+      <div class='tips' v-bind:class='{show:tips.show}'>
+        <p>tips:</p>
+        <p>{{{tips.text}}}</p>
+      </div>
     </div>
-       
+    
     <script type="text/javascript" src = "canvas.js"></script>
     
 </html>
