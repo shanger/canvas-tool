@@ -13,7 +13,7 @@
     		<label for='percent'>百分比：</label><input type='text' id='percent' v-model="add.percent" v-bind:placeholder='add.placeholder' v-el:percent/><br/>
     		<input type='button' value='添加' v-on:click.stop="Add()"/>
     		<ul>
-    			<li v-for='item in input'><span v-bind:style="{backgroundColor:item.color}"></span>{{item.name}}</li>
+    			<li v-for='item in input'><span v-bind:style="{backgroundColor:item.color}"></span><label>{{item.name}}</label><label>{{item.percent}}%</label></li>
     		</ul>
 	    </div><div class="right">
 	    	<canvas  width="400px" height='400px' ></canvas>
