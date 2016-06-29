@@ -11,13 +11,12 @@ li{list-style: none;}
 #demo{
 	position: relative;
 }
-#demo > div{
-	display: inline-block;height: 600px;
+#demo > div:nth-of-type(1),#demo > div:nth-of-type(2){
+	display: inline-block;min-height: 600px;
 	vertical-align: top;
 }
 #demo > div:nth-of-type(1){
-	width: 400px;
-	border-right: 2px solid #f60;
+	width: 400px;	
 	padding-top: 20px;
 }
 #demo > div:nth-of-type(1) > ul > li{
@@ -48,7 +47,8 @@ li{list-style: none;}
 	margin-right: 10px;
 }
 #demo > div:nth-of-type(2){
-	width: 600px;padding: 100px;
+	width: 600px;padding: 98px;
+	border-left: 2px solid #f60;
 }
 /*提示框*/
 #demo > div.tips{

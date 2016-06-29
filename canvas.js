@@ -33,9 +33,11 @@ var demo = new Vue({
 			}else if(this.add.percent == ''){
 				this.inputpercent.focus();
 				this.tipsShow('请完善信息！');
+			}else if(isNaN(parseInt(this.add.percent))){
+				this.inputpercent.focus();
+				this.tipsShow('请输入有效数字！');
 			}
 			else{
-				console.log(deg)
 				var color = 'rgb('+Math.floor(Math.random()*256)+','+Math.floor(Math.random()*256)+','+Math.floor(Math.random()*256)+')';
 				var deg = 0;
 				this.input.push({
@@ -49,11 +51,12 @@ var demo = new Vue({
 				this.add.placeholder = this.add.placeholder - this.add.percent;
 				this.inputpercent.value = '';
 				this.draw(color,deg/100);
+				this.barChart(color,this.add.percent/100,this.input.length);
 			}
 			
 		},
 		draw:function(color,deg){
-			var canvas = document.querySelector('canvas');
+			var canvas = document.querySelectorAll('canvas')[0];
             var context = canvas.getContext("2d");
             context.beginPath();  
             context.moveTo(200, 200);  
@@ -62,6 +65,14 @@ var demo = new Vue({
             context.fillStyle = color;
             context.fill();
             context.globalCompositeOperation = "destination-over";
+		},
+		barChart:function(color,deg,len){
+			var canvas = document.querySelectorAll('canvas')[1];
+            var context = canvas.getContext("2d");
+            context.beginPath();  
+            context.fillStyle = color;
+            context.fillRect(60*(len-1),400*(1-deg),40,400)
+            context.closePath();  
 		},
 		getinput:function(){
 			var This = this;
