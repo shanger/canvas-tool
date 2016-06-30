@@ -1,4 +1,5 @@
 
+
 var demo = new Vue({
 	el:"#demo",
 	data:{
@@ -50,8 +51,9 @@ var demo = new Vue({
 				});
 				this.add.placeholder = this.add.placeholder - this.add.percent;
 				this.inputpercent.value = '';
-				this.draw(color,deg/100);
-				this.barChart(color,this.add.percent/100,this.input.length);
+				this.draw(color,deg/100);//饼状图
+				this.barChart(color,this.add.percent/100,this.input.length);//柱状图
+				this.brokenLine();//折线图
 			}
 			
 		},
@@ -81,6 +83,24 @@ var demo = new Vue({
 			  This.inputname = This.$els.name;
 			})
 		},
+		brokenLine:function(){
+			var This = this;
+			var list = this.input;
+			var len = list.length;
+			var canvas = document.querySelectorAll('canvas')[2];
+	        var context = canvas.getContext("2d");
+	        context.moveTo(0,400);
+	        context.beginPath(); 
+			list.forEach(function(ele,index){  	
+				context.lineTo((index + 1)*40,400*( 1-parseInt(list[index].percent)/100 ));	
+				context.lineWidth = 1; 
+			context.strokeStyle = list[index].color;
+			context.stroke(); 			
+			})
+						            
+            context.closePath();
+		},
+		//tip
 		tipsShow:function(text){
 			var This = this;
 			this.tips.show = true;
