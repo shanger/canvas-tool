@@ -89,16 +89,20 @@ var demo = new Vue({
 			var len = list.length;
 			var canvas = document.querySelectorAll('canvas')[2];
 	        var context = canvas.getContext("2d");
-	        context.moveTo(0,400);
-	        context.beginPath(); 
-			list.forEach(function(ele,index){  	
+	        //context.moveTo(0,400);
+	        //context.beginPath(); 
+			/*list.forEach(function(ele,index){  	
 				context.lineTo((index + 1)*40,400*( 1-parseInt(list[index].percent)/100 ));	
 				context.lineWidth = 1; 
-			context.strokeStyle = list[index].color;
-			context.stroke(); 			
-			})
-						            
-            context.closePath();
+				context.strokeStyle = list[index].color;
+				context.stroke(); 			
+			})*/
+			context.lineTo((len)*40,400*( 1-parseInt(list[len-1].percent)/100 ));	
+			context.lineWidth = 2; 
+			context.strokeStyle = list[len-1].color;
+			context.stroke()
+			context.globalCompositeOperation = "destination-over";			            
+            //context.closePath();
 		},
 		//tip
 		tipsShow:function(text){
