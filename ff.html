@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>RunJS 演示代码</title>
+	<style type="text/css">
+		canvas{
+			display: block;
+			margin:20px auto;
+		}
+	</style>
+  </head>
+<body style="background-color: black">
+	<canvas width='400' height='400'></canvas>
+	<script type="text/javascript">
+		
+
+	var canvas = document.querySelector('canvas');
+	var context = canvas.getContext('2d');
+	//云的左边
+	context.beginPath();
+  context.arc(104,150,100,Math.PI*2,Math.PI*2*.25,true);
+	context.strokeStyle = "white";
+	context.lineWidth = '4';
+  context.stroke();
+  context.closePath();
+	//云的右边
+	context.beginPath();
+  context.arc(204,228,80,Math.PI*2*.75,Math.PI*2,false);
+	context.strokeStyle = "white";
+	context.lineWidth = '4';
+  context.stroke();
+  context.closePath();
+	//太阳
+	context.beginPath();
+  context.arc(226,120,60,Math.PI*2*.6,Math.PI*2*.16,false);
+	context.strokeStyle = "white";
+	context.lineWidth = '4';
+  context.stroke();
+  context.closePath();
+	//阳光
+	context.beginPath();
+  context.moveTo(310,120);
+	context.lineTo(360,100);
+
+	context.moveTo(290,80);
+	context.lineTo(335,42);
+
+	context.moveTo(250,50);
+	context.lineTo(280,10);
+	context.strokeStyle = "white";
+	context.lineWidth = '4';
+  context.stroke();
+  context.closePath();
+	//下雨
+	context.beginPath();
+  	/*var x = 0;
+	setInterval(function(){
+		if(x > 80){
+			x = 0;
+		}else{
+			
+			x++;
+		}
+		
+		context.moveTo(130,200+x);
+		context.lineTo(130,280);
+	},30);*/
+	context.moveTo(130,200);
+	context.lineTo(130,280);
+	context.moveTo(180,220);
+	context.lineTo(180,300);
+
+	context.moveTo(230,210);
+	context.lineTo(230,290);
+
+	context.strokeStyle = "white";
+	context.lineWidth = '4';
+  context.stroke();
+  context.closePath();
+	
+	</script>
+</body>
+</html>
