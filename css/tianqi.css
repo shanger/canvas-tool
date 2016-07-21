@@ -1,15 +1,18 @@
 body{
 	background-color: rgba(2,70,250,.6);
 }
-canvas{
+body > canvas{
 			position:absolute;
 			top:20px;
 			left:50%;margin-left:-200px;
 			display: block;
 		}
-canvas:nth-of-type(4){
+body >  canvas:nth-of-type(4){
 	animation:'rotating' 2s infinite;
 	-webkit-animation:'rotating' 2s infinite;
+	-moz-animation:'rotating' 2s infinite;
+	-ms-animation:'rotating' 2s infinite;
+	-o-animation:'rotating' 2s infinite;
 	transform-origin:center center;
 	-webkit-transform-origin:center center;
 	-moz-transform-origin:center center;
@@ -129,5 +132,150 @@ canvas:nth-of-type(4){
 		-moz-transform:rotate(-7deg); 
 		-webkit-transform:rotate(-7deg); 
 		-o-transform:rotate(-7deg);
+	}
+}
+.qingtian {
+	margin:420px auto 0;
+	text-align: center;
+	overflow: hidden;
+	position: relative;height: 400px;
+}
+.qingtian > canvas{
+	position:absolute;
+	left:50%;margin-left:-200px;
+	display: block;
+}
+.qingtian > canvas:nth-of-type(1){
+	transform-origin:center center;
+	-webkit-transform-origin:center center;
+	-moz-transform-origin:center center;
+	-o-transform-origin:center center;
+	-ms-transform-origin:center center;
+	animation:'qingtian' 4s infinite;
+	-webkit-animation:'qingtian' 4s infinite;
+	-moz-animation:'qingtian' 4s infinite;
+	-ms-animation:'qingtian' 4s infinite;
+	-o-animation:'qingtian' 4s infinite;
+	transition:transform linear;
+	-webkit-transition:transform linear;
+	-moz-transition:transform linear;
+	-ms-transition:transform linear;
+	-o-transition:transform linear;
+}
+
+@keyframes qingtian{
+	0%{
+		transform:rotate(-45deg);
+		-ms-transform:rotate(-45deg); 	
+		-moz-transform:rotate(-45deg); 
+		-webkit-transform:rotate(-45deg); 
+		-o-transform:rotate(-45deg);
+	}
+	50%{
+		transform:rotate(45deg);
+		-ms-transform:rotate(45deg); 	
+		-moz-transform:rotate(45deg); 
+		-webkit-transform:rotate(45deg); 
+		-o-transform:rotate(45deg);
+	}
+	100%{
+		transform:rotate(-45deg);
+		-ms-transform:rotate(-45deg); 	
+		-moz-transform:rotate(-45deg); 
+		-webkit-transform:rotate(-45deg); 
+		-o-transform:rotate(-45deg);
+	}
+	
+}
+@-webkit-keyframes qingtian{
+	0%{
+		transform:rotate(-45deg);
+		-ms-transform:rotate(-45deg); 	
+		-moz-transform:rotate(-45deg); 
+		-webkit-transform:rotate(-45deg); 
+		-o-transform:rotate(-45deg);
+	}
+	50%{
+		transform:rotate(45deg);
+		-ms-transform:rotate(45deg); 	
+		-moz-transform:rotate(45deg); 
+		-webkit-transform:rotate(45deg); 
+		-o-transform:rotate(45deg);
+	}
+	100%{
+		transform:rotate(-45deg);
+		-ms-transform:rotate(-45deg); 	
+		-moz-transform:rotate(-45deg); 
+		-webkit-transform:rotate(-45deg); 
+		-o-transform:rotate(-45deg);
+	}
+}
+@-moz-keyframes qingtian{
+	0%{
+		transform:rotate(-45deg);
+		-ms-transform:rotate(-45deg); 	
+		-moz-transform:rotate(-45deg); 
+		-webkit-transform:rotate(-45deg); 
+		-o-transform:rotate(-45deg);
+	}
+	50%{
+		transform:rotate(45deg);
+		-ms-transform:rotate(45deg); 	
+		-moz-transform:rotate(45deg); 
+		-webkit-transform:rotate(45deg); 
+		-o-transform:rotate(45deg);
+	}
+	100%{
+		transform:rotate(-45deg);
+		-ms-transform:rotate(-45deg); 	
+		-moz-transform:rotate(-45deg); 
+		-webkit-transform:rotate(-45deg); 
+		-o-transform:rotate(-45deg);
+	}
+}
+@-ms-keyframes qingtian{
+	0%{
+		transform:rotate(-45deg);
+		-ms-transform:rotate(-45deg); 	
+		-moz-transform:rotate(-45deg); 
+		-webkit-transform:rotate(-45deg); 
+		-o-transform:rotate(-45deg);
+	}
+	50%{
+		transform:rotate(45deg);
+		-ms-transform:rotate(45deg); 	
+		-moz-transform:rotate(45deg); 
+		-webkit-transform:rotate(45deg); 
+		-o-transform:rotate(45deg);
+	}
+	100%{
+		transform:rotate(-45deg);
+		-ms-transform:rotate(-45deg); 	
+		-moz-transform:rotate(-45deg); 
+		-webkit-transform:rotate(-45deg); 
+		-o-transform:rotate(-45deg);
+	}
+}
+@-o-keyframes qingtian{
+	0%{
+		transform:rotate(-45deg);
+		-ms-transform:rotate(-45deg); 	
+		-moz-transform:rotate(-45deg); 
+		-webkit-transform:rotate(-45deg); 
+		-o-transform:rotate(-45deg);
+	}
+	50%{
+		transform:rotate(45deg);
+		-ms-transform:rotate(45deg); 	
+		-moz-transform:rotate(45deg); 
+		-webkit-transform:rotate(45deg); 
+		-o-transform:rotate(45deg);
+	}
+	100%{
+		transform:rotate(-45deg);
+		-ms-transform:rotate(-45deg); 	
+		-moz-transform:rotate(-45deg); 
+		-webkit-transform:rotate(-45deg); 
+		-o-transform:rotate(-45deg);
 	}
 }

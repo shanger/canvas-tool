@@ -9,7 +9,7 @@
 	context.closePath();
 	//云的右边
 	context.beginPath();
-	context.arc(204,228,80,Math.PI*2*.75,Math.PI*2*.15,false);
+	context.arc(200,228,80,Math.PI*2*.75,Math.PI*2*.15,false);
 	context.stroke();
 	context.closePath();
 	//太阳
@@ -90,4 +90,35 @@
 			context3.closePath();			
 		},30);
 	},1000);
+	//晴天
+	var qingtian1 = document.querySelectorAll('.qingtian > canvas')[0];
+	var qingtian1 = qingtian1.getContext('2d');
+	qingtian1.strokeStyle = "white";
+	qingtian1.fillStyle = '#6793fc';
+	qingtian1.lineWidth = '4'
+	for(var i = 0;i < 17;i++){
+			qingtian1.beginPath();
+			qingtian1.moveTo(200,200);
+			qingtian1.arc(200,200,150,0,Math.PI*2/16*i,false);
+			qingtian1.closePath();
+			qingtian1.stroke();		
+	}
+	
+	qingtian1.beginPath();
+	qingtian1.arc(200,200,100,0,Math.PI*2,false);
+	qingtian1.closePath();
+	qingtian1.fill();
+	qingtian1.beginPath();
+	qingtian1.strokeStyle = "#6793fc";
+	qingtian1.lineWidth = '6'
+	qingtian1.arc(200,200,150,0,Math.PI*2,false);
+	qingtian1.closePath();
+	qingtian1.stroke();
+
+	qingtian1.strokeStyle = "white";
+	qingtian1.lineWidth = '6'
+	qingtian1.beginPath();
+	qingtian1.arc(200,200,90,0,Math.PI*2,false);
+	qingtian1.closePath();
+	qingtian1.stroke();
 	
